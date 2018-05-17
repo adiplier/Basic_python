@@ -3,7 +3,8 @@ import pandas as pd
 
 def pdcsv(data):
 	df = pd.DataFrame(data, columns = ['ID','Password','KeepLoggedIn'])
-	df.to_csv('out.csv')
+	with open('out.csv', 'a') as f:
+		df.to_csv(f, header = False)
 	print (df)
 
 def window():
